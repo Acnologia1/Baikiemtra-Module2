@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa thành phố</title>
+</head>
+<body>
+<h1>Xóa thành phố</h1>
+<h2>Bạn có chắc muốn xóa không?</h2>
+<p>
+    <a href="/citys">City list</a>
+</p>
+<form th:action="@{/delete-city}" th:object="${city}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td th:text="${city.tenThanhPho}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Xóa"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Thoát"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
